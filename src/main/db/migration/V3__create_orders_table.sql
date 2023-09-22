@@ -4,5 +4,5 @@ CREATE TABLE orders (
     part_id INT NOT NULL,
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users (id),
-    FOREIGN KEY (part_id) REFERENCES autoparts (id)
+    FOREIGN KEY (part_id) REFERENCES auto_parts (id)
 );

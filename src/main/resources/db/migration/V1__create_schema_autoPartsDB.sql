@@ -1,3 +1,0 @@
-DROP SCHEMA IF EXISTS autoPartsDB;
-
-CREATE SCHEMA autoPartsDB;

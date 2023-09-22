@@ -1,4 +1,4 @@
-CREATE TABLE autoparts (
+CREATE TABLE auto_parts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     part_name VARCHAR(100) NOT NULL,
     category VARCHAR(40) NOT NULL,

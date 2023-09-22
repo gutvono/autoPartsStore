@@ -1,5 +1,5 @@
 INSERT INTO
-    autoparts (part_name, category, car_name, price, image)
+    auto_parts (part_name, category, car_name, price, image)
 VALUES
     ('Par Farol',
      'Farol',
