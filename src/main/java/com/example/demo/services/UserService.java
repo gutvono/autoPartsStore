@@ -2,6 +2,7 @@ package com.example.demo.services;
 
 import com.example.demo.dto.UserOrdersRequest;
 import com.example.demo.entities.UserEntity;
+import com.example.demo.repositories.OrderRepository;
 import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,8 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private OrderRepository orderRepository;
 
     public String userLogin(String username, String password) {
         Optional<UserEntity> userOptional = userRepository.findUserEntityByLogin(username);
@@ -37,7 +40,7 @@ public class UserService {
         userWithOrders.setId(user.getId());
         userWithOrders.setName(user.getName());
         userWithOrders.setRole(user.getRole());
-        userWithOrders.setParts(user.getOrders());
+        userWithOrders.setParts(orderRepository.findByUserId(user.getId()));
 
         return userWithOrders;
     }
