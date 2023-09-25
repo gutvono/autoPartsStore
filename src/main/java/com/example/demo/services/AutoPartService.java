@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AutoPartService {
@@ -17,7 +16,7 @@ public class AutoPartService {
         return autoPartRepository.findAll();
     }
 
-    public Optional<AutoPartEntity> getPartByName(String name) {
+    public List<AutoPartEntity> getPartByName(String name) {
         return autoPartRepository.findAutoPartEntityByPartNameContainsIgnoreCase(name);
     }
 

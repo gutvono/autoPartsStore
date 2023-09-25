@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.dto.UserOrdersRequest;
 import com.example.demo.entities.UserEntity;
 import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,25 @@ public class UserService {
         }
     }
 
+    public UserOrdersRequest getUser(Integer id) {
+        Optional<UserEntity> userOptional = userRepository.findById(id);
+
+        UserEntity user = userOptional.get();
+
+        UserOrdersRequest userWithOrders = new UserOrdersRequest();
+        userWithOrders.setId(user.getId());
+        userWithOrders.setName(user.getName());
+        userWithOrders.setRole(user.getRole());
+        userWithOrders.setParts(user.getOrders());
+
+        return userWithOrders;
+    }
+
     public void registerOrUpdateUser(UserEntity user) {
         userRepository.save(user);
+    }
+
+    public void deleteUser(Integer id) {
+        userRepository.deleteById(id);
     }
 }

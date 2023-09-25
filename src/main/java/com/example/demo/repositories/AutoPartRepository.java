@@ -4,9 +4,9 @@ import com.example.demo.entities.AutoPartEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+import java.util.List;
 
 @Repository
 public interface AutoPartRepository extends JpaRepository<AutoPartEntity, Integer> {
-    Optional<AutoPartEntity> findAutoPartEntityByPartNameContainsIgnoreCase(String name);
+    List<AutoPartEntity> findAutoPartEntityByPartNameContainsIgnoreCase(String name);
 }

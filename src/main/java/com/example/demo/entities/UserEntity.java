@@ -1,13 +1,15 @@
 package com.example.demo.entities;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
-@Entity(name = "user")
+@Entity(name = "users")
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,4 +33,13 @@ public class UserEntity {
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @JsonIgnoreProperties("userOrders")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "orders",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "part_id")
+    )
+    private List<OrderEntity> orders;
 }
