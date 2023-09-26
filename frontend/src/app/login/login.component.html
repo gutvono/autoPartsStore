@@ -1,0 +1,15 @@
+<form [formGroup]="loginForm" (submit)="login()" autocomplete="on">
+    <h1>Login</h1>
+
+    <div class="form-control">
+        <label for="">Usuario</label>
+        <input formControlName="username" type="username" name="username" id="username_input" autocomplete="username">
+    </div>
+
+    <div class="form-control">
+        <label for="">Senha</label>
+        <input formControlName="password" type="password" name="password" id="password_input" autocomplete="new-password">
+    </div>
+
+    <button type="submit">Login</button>
+</form>
