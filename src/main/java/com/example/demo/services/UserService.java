@@ -24,7 +24,7 @@ public class UserService {
             if (password.equals(user.getPassword())) {
                 return "Login feito com sucesso! Role: " + user.getRole();
             } else {
-                return "Senha incorreta.";
+                return "Login ou senha incorreto.";
             }
         } else {
             return "Usuário não encontrado.";
