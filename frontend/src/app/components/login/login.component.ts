@@ -41,7 +41,7 @@ export class LoginComponent {
             .subscribe({
                 complete() {console.info('complete')},
                 error(e) {console.log(e)}
-            })
+            });
 
         // this.router.navigate(['/market']);
     }
