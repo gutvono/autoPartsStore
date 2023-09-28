@@ -61,8 +61,36 @@ footer {
     align-items: center;
     gap: 1.5rem;
 
-    img {
-        width: 15px;
+    div {
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+    
+        input {
+            all: unser;
+            padding: 0.25rem;
+            width: 100%;
+        }
+    
+        button {
+            width: 30px;
+            margin-left: 5px;
+            background-color: rgb(192, 78, 2);
+            border: none;
+            padding: 0.25rem;
+            border: 100px;
+            cursor: pointer;
+            transition: 0.3s;
+    
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        button:hover {
+            opacity: 0.5;
+        }
     }
 }
 
@@ -77,9 +105,4 @@ a {
 
 a:hover {
     opacity: 0.7;
-}
-
-button {
-    width: 30px;
-    margin-left: 5px;
 }
