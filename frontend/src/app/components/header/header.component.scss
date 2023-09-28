@@ -1,0 +1,38 @@
+header {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #282829ee;
+    height: 10vh;
+}
+
+h1 {
+    text-decoration: none;
+}
+
+nav {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    opacity: 0.2;
+}
+
+.logo {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.navbar-logo {
+    width: 40px;
+}

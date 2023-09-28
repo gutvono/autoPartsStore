@@ -1,1 +1,21 @@
-<p>header works!</p>
+<header>
+    <p *ngIf="user">
+        Olá, {{user}}
+    </p>
+
+    <div class="logo">
+        <a href="http://localhost:4200/home">
+                <h2>AUTO PARTS STORE</h2>
+        </a>
+    </div>
+
+    <nav>
+        <a href="https://www.linkedin.com/in/gustavono/">
+            <img src="../../../assets/linkedin-logo-png-1829.png" alt="linkedin-logo" class="navbar-logo">
+        </a>
+
+        <a href="https://github.com/gutvono">
+            <img src="../../../assets/github-logo.png" alt="github-logo" class="navbar-logo">
+        </a>
+    </nav>
+</header>
