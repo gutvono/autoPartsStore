@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<form [formGroup]="loginForm" (submit)="login()" autocomplete="on">
+    <h1>Login</h1>
+
+    <div class="form-control">
+        <label>Usuario</label>
+        <input formControlName="username" type="username" name="username" id="username_input" autocomplete="username" required>
+
+        <div *ngIf="username.errors?.['required']" class="validation-errors">
+            Informe o nome de usuário
+        </div>
+
+    </div>
+
+
+    <div class="form-control">
+        <label>Senha</label>
+        <input formControlName="password" type="password" name="password" id="password_input" autocomplete="new-password">
+
+        <div *ngIf="password.errors?.['required']" class="validation-errors">
+            Informe a senha
+        </div>
+
+    </div>
+
+    <div *ngIf="submitError" class="validation-errors">
+        {{ submitError }}
+    </div>
+    <div *ngIf="submitSuccess" class="submit-success">
+        {{ submitSuccess }}
+        <img src="https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif" alt="loading-gif">
+    </div>
+    
+
+    <button type="submit">Login</button>
+</form>
+
+<app-footer></app-footer>
