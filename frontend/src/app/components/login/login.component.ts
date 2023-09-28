@@ -9,6 +9,9 @@ import { LoginService } from 'src/app/services/login/login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+    public submitError:string = "";
+    public submitSuccess:string = "";
+
     loginForm = new FormGroup({
         username: new FormControl('', Validators.required),
         password: new FormControl('', Validators.required)
@@ -16,7 +19,7 @@ export class LoginComponent {
 
     constructor(
         private loginService: LoginService,
-        private router: Router
+        private router: Router,
         ) {}
 
     get username() {
@@ -33,16 +36,19 @@ export class LoginComponent {
             return;
         };
 
-        console.log(this.loginForm.value);
-
         alert("Validando suas credenciais...");
         this.loginService
             .loginPost(this.loginForm.value)
             .subscribe({
-                complete() {console.info('complete')},
-                error(e) {console.log(e)}
+                next: (data) => {
+                    this.submitError = "";
+                    this.submitSuccess = data.message;
+                    // this.router.navigate(['/market']);
+                },
+                error: (e) => {
+                    this.submitSuccess = "";
+                    this.submitError = e.error.message;
+                }
             });
-
-        // this.router.navigate(['/market']);
     }
 }

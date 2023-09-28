@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <form [formGroup]="loginForm" (submit)="login()" autocomplete="on">
     <h1>Login</h1>
 
@@ -22,6 +24,16 @@
 
     </div>
 
+    <div *ngIf="submitError" class="validation-errors">
+        {{ submitError }}
+    </div>
+    <div *ngIf="submitSuccess" class="submit-success">
+        {{ submitSuccess }}
+        <img src="https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif" alt="loading-gif">
+    </div>
+    
 
     <button type="submit">Login</button>
 </form>
+
+<app-footer></app-footer>
