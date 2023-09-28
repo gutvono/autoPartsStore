@@ -97,6 +97,7 @@ footer {
 .footer-copyright {
     text-align: center;
     padding-bottom: 10px;
+    font-size: 0.8rem;
 }
 
 a {
@@ -105,4 +106,22 @@ a {
 
 a:hover {
     opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-social-media p {
+        display: none;
+      }
+}
+
+@media screen and (max-width: 427px) {
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-social-media p {
+        display: none;
+      }
 }
