@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import com.example.demo.dto.LoginRequest;
 import com.example.demo.dto.UserOrdersRequest;
+import com.example.demo.entities.UserEntity;
 import com.example.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,6 +35,11 @@ public class UserController {
         }
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(loginResult);
+    }
+    
+    @PostMapping("/register/permission")
+    public void register(@RequestBody UserEntity user) {
+        userService.registerOrUpdateUser(user);
     }
 
     @GetMapping("/market")
