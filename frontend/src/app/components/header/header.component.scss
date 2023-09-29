@@ -1,7 +1,8 @@
 header {
+    padding: 0 20px;
     color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background: #282829ee;
     height: 10vh;
@@ -33,6 +34,18 @@ a:hover {
     letter-spacing: 4px;
 }
 
-.navbar-logo {
-    width: 40px;
+.nav-username-header {
+    &[class*="user-visible"] {
+        display: flex;
+        width: 220px;
+        margin-right: 20px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    img {
+        width: 40px;
+        margin-right: 10px;
+    }
 }
