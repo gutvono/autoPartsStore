@@ -1,0 +1,51 @@
+header {
+    padding: 0 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #282829ee;
+    height: 10vh;
+}
+
+h1 {
+    text-decoration: none;
+}
+
+nav {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    opacity: 0.2;
+}
+
+.logo {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.nav-username-header {
+    &[class*="user-visible"] {
+        display: flex;
+        width: 220px;
+        margin-right: 20px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    img {
+        width: 40px;
+        margin-right: 10px;
+    }
+}
