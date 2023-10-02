@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RegisterService } from 'src/app/services/register/register.service';
+import { RegisterService } from './register.service';
 import passwordValidator from './register.validators';
 
 @Component({
@@ -78,7 +78,7 @@ export class RegisterComponent {
                 next: (data) => {
                     this.submitError = "";
                     this.submitSuccess = data.message;
-                    // this.router.navigate(['/market']);
+                    this.router.navigate(['/market']);
                 },
                 error: (e) => {
                     this.submitSuccess = "";
