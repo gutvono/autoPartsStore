@@ -1,14 +1,51 @@
 <app-header></app-header>
 
 <form [formGroup]="registerForm" (submit)="register()" autocomplete="on">
-    <h1>Registrar</h1>
+    <h1>Cadastro</h1>
+
+    <div class="form-control">
+        <label>Nome</label>
+        <input formControlName="name" type="text" name="name" id="name_input">
+
+        <div *ngIf="registerForm.get('name')?.errors" class="validation-errors">
+            Insira seu nome.
+        </div>
+    </div>
+
+    <div class="form-control">
+        <label>Sobrenome</label>
+        <input formControlName="lastname" type="text" name="lastname" id="lastname_input">
+
+        <div *ngIf="registerForm.get('lastname')?.errors" class="validation-errors">
+            Insira seu sobrenome.
+        </div>
+    </div>
+
+    <div class="form-control">
+        <label>Tipo de conta</label>
+        <input formControlName="role" type="hidden" name="role" id="role_input" value="customer">
+        <p class="observation">Obs: até o momento, só é possivel criar conta de comprador por este meio.</p>
+
+        <!-- <div *ngIf="registerForm.get('role')?.errors" class="validation-errors">
+            Escolha o tipo de conta.
+        </div> -->
+    </div>
+
+    <div class="form-control">
+        <label>Idade</label>
+        <input formControlName="age" type="number" name="age" id="age_input">
+
+        <div *ngIf="registerForm.get('age')?.errors" class="validation-errors">
+            Insira sua idade.
+        </div>
+    </div>
 
     <div class="form-control">
         <label>Usuario</label>
-        <input formControlName="username" type="username" name="username" id="username_input" autocomplete="username" required>
+        <input formControlName="login" type="text" name="login" id="login_input" autocomplete="username">
 
-        <div *ngIf="username.errors?.['required']" class="validation-errors">
-            Digite o nome de usuário
+        <div *ngIf="login?.errors" class="validation-errors">
+            O nome de usuário deve ter mais de 8 caracteres.
         </div>
     </div>
 
@@ -17,8 +54,8 @@
         <label>Senha</label>
         <input formControlName="password" type="password" name="password" id="password_input" autocomplete="new-password">
 
-        <div *ngIf="password.errors?.['required']" class="validation-errors">
-            Digite uma senha
+        <div *ngIf="registerForm.get('password')?.errors" class="validation-errors">
+            A senha deve ter letras maiúsculas, letras minúsculas e pelo menos um número.
         </div>
     </div>
 
@@ -31,7 +68,7 @@
     </div>
     
 
-    <button type="submit">Login</button>
+    <button type="submit">Registrar</button>
 </form>
 
 <app-footer></app-footer>

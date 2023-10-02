@@ -38,8 +38,9 @@ public class UserController {
     }
     
     @PostMapping("/register/permission")
-    public void register(@RequestBody UserEntity user) {
+    public String register(@RequestBody UserEntity user) {
         userService.registerOrUpdateUser(user);
+        return "Usuário registrado com sucesso.";
     }
 
     @GetMapping("/market")
