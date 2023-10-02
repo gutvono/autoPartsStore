@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/services/login/login.service';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -20,15 +20,15 @@ export class LoginComponent {
     constructor(
         private loginService: LoginService,
         private router: Router,
-        ) {}
+        ) {};
 
     get username() {
         return this.loginForm.get('username')!;
-    }
+    };
 
     get password() {
         return this.loginForm.get('password')!;
-    }
+    };
 
     login() {
         if (this.loginForm.invalid) {
@@ -43,7 +43,7 @@ export class LoginComponent {
                 next: (data) => {
                     this.submitError = "";
                     this.submitSuccess = data.message;
-                    // this.router.navigate(['/market']);
+                    this.router.navigate(['/market']);
                 },
                 error: (e) => {
                     this.submitSuccess = "";
