@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 export class LoginService {
     private baseUrl = 'http://localhost:8080/login'
 
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-  loginPost(credencials: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/permission`, credencials)
-  }
+    loginPost(credencials: any): Observable<any> {
+        return this.http.post(`${this.baseUrl}/permission`, credencials)
+    }
 }
