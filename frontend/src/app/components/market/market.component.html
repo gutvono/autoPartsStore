@@ -1,5 +1,39 @@
 <app-header></app-header>
 
-<p>market works!</p>
+<form [formGroup]="filterForm" (ngSubmit)="applyFilter('')">
+    <div>
+        <label for="name">Nome da peça:</label>
+        <input formControlName="name" type="text" id="name">
+    </div>
+
+    <div>
+        <label for="preice">Preço:</label>
+        <input formControlName="maxPrice" type="range" id="maxPrice" min="0" max="9999">
+        <p>{{maxPrice?.value}}</p>
+    </div>
+
+    <button type="submit">Filtrar</button>
+    <button type="click" (click)="filterReset()">Resetar filtro</button>
+</form>
+
+<div class="categoryFilter">
+    <p>Categorias</p>
+    <button (click)="applyFilter('Farol')">Farol</button>
+    <button (click)="applyFilter('Injeção')">Injeção</button>
+    <button (click)="applyFilter('Interior')">Interior</button>
+    <button (click)="applyFilter('Motor')">Motor</button>
+    <button (click)="applyFilter('Suspensão')">Suspensão</button>
+</div>
+
+<section class="all-auto-parts-cards">
+    <div class="auto-part-card" *ngFor="let part of filteredAutoParts">
+        <p class="partName">{{part.partName}}</p>
+        <p class="carName">{{part.carName}}</p>
+        <p class="category">{{part.category}}</p>
+        <img src="{{part.image}}" alt="{{part.partName}}">
+        <p class="price">{{part.price}}</p>
+        <button>Comprar</button>
+    </div>
+</section>
 
 <app-footer></app-footer>
