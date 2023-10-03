@@ -15,7 +15,7 @@ export class MarketService {
         return this.http.get<AutoPart[]>(`${this.baseUrl}/all`);
     }
 
-    getAutoPartsByFilter(name:string, maxPrice: number): Observable<any> {
-        return this.http.get(`${this.baseUrl}/all`, { params: { name } })
+    getAutoPartsByCategoryFilter(category: string): Observable<AutoPart[]> {
+        return this.http.get<AutoPart[]>(`${this.baseUrl}/search`, { params: { category } })
     }
 }
