@@ -17,11 +17,11 @@
 
 <div class="categoryFilter">
     <p>Categorias</p>
-    <button>Farol</button>
-    <button>Injeção</button>
-    <button>Interior</button>
-    <button>Motor</button>
-    <button>Suspensão</button>
+    <button (click)="applyCategoryFilter('Farol')">Farol</button>
+    <button (click)="applyCategoryFilter('Injeção')">Injeção</button>
+    <button (click)="applyCategoryFilter('Interior')">Interior</button>
+    <button (click)="applyCategoryFilter('Motor')">Motor</button>
+    <button (click)="applyCategoryFilter('Suspensão')">Suspensão</button>
 </div>
 
 <section class="all-auto-parts-cards">
