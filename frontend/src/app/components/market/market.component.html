@@ -9,7 +9,7 @@
     <div>
         <label for="preice">Preço:</label>
         <input formControlName="maxPrice" type="range" id="maxPrice" min="0" max="9999">
-        <p>{{maxPrice?.value}}</p>
+        <p>R${{maxPrice?.value?.toFixed(2)}}</p>
     </div>
 
     <button type="submit">Filtrar</button>
