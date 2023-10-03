@@ -9,7 +9,7 @@
     <div>
         <label for="preice">Preço:</label>
         <input formControlName="maxPrice" type="range" id="maxPrice" min="0" max="9999">
-        <p>{{maxPrice?.value}}</p>
+        <p>R${{maxPrice?.value?.toFixed(2)}}</p>
     </div>
 
     <button type="submit">Filtrar</button>
@@ -27,12 +27,18 @@
 
 <section class="all-auto-parts-cards">
     <div class="auto-part-card" *ngFor="let part of filteredAutoParts">
-        <p class="partName">{{part.partName}}</p>
-        <p class="carName">{{part.carName}}</p>
-        <p class="category">{{part.category}}</p>
+        <div class="card-header">
+            <h4 class="partName">{{part.partName}}</h4>
+            <p class="carName">{{part.carName}}</p>
+            <p class="category">{{part.category}}</p>
+        </div>
+
         <img src="{{part.image}}" alt="{{part.partName}}">
-        <p class="price">{{part.price}}</p>
-        <button>Comprar</button>
+
+        <div class="card-footer">
+            <p class="price">R${{part.price.toFixed(2)}}</p>
+            <button>Comprar</button>
+        </div>
     </div>
 </section>
 
