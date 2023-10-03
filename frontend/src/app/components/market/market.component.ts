@@ -9,7 +9,6 @@ import { AutoPart } from './IAutoPart';
   styleUrls: ['./market.component.scss']
 })
 export class MarketComponent {
-    public selectedCategory:string = '';
     public allAutoParts: AutoPart[] = [];
     public filteredAutoParts: AutoPart[] = [];
 
@@ -38,24 +37,18 @@ export class MarketComponent {
         return this.filterForm.get('maxPrice');
     };
 
-    applyFilter(category: string | null): void {
-        if (category) {
-            this.selectedCategory = category;
-        }
-
-        console.log(this.partName?.value, this.maxPrice?.value, this.selectedCategory);
+    applyFilter(): void {
+        const { name, maxPrice } = this.filterForm.value;
         
         this.filteredAutoParts = this.allAutoParts.filter((part: AutoPart) => {
-            
+            if (part.partName.toLowerCase().includes(name!.toLowerCase()) && part.price < maxPrice!) return true;
+            return false;
         })
-
-        console.log(this.allAutoParts);
-        console.log(this.filteredAutoParts);
     };
 
     filterReset(): void {
         this.partName?.setValue('');
         this.maxPrice?.setValue(9999);
-        this.selectedCategory = '';
+        this.filteredAutoParts = this.allAutoParts;
     };
 }
