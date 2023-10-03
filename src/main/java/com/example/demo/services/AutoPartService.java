@@ -16,8 +16,8 @@ public class AutoPartService {
         return autoPartRepository.findAll();
     }
 
-    public List<AutoPartEntity> getPartByName(String name) {
-        return autoPartRepository.findAutoPartEntityByPartNameContainsIgnoreCase(name);
+    public List<AutoPartEntity> getPartByCategory(String category) {
+        return autoPartRepository.findAutoPartEntityByCategoryIgnoreCase(category);
     }
 
     public void insertOrUpdateAutoPart(AutoPartEntity autoPart) {

@@ -20,7 +20,7 @@ public class AutoPartController {
     }
 
     @GetMapping("/search")
-    public List<AutoPartEntity> searchAutoPartsByName(@RequestParam("name") String name) {
-        return autoPartService.getPartByName(name);
+    public List<AutoPartEntity> searchAutoPartsByCategory(@RequestParam("category") String category) {
+        return autoPartService.getPartByCategory(category);
     }
 }
