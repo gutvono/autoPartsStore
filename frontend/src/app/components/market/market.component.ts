@@ -44,9 +44,6 @@ export class MarketComponent {
             if (part.partName.toLowerCase().includes(name!.toLowerCase()) && part.price < maxPrice!) return true;
             return false;
         })
-
-        console.log(this.allAutoParts);
-        console.log(this.filteredAutoParts);
     };
 
     filterReset(): void {
