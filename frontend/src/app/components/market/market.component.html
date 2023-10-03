@@ -1,28 +1,27 @@
 <app-header></app-header>
 
-<form [formGroup]="filterForm" (ngSubmit)="applyFilter('')">
+<form [formGroup]="filterForm">
     <div>
         <label for="name">Nome da peça:</label>
-        <input formControlName="name" type="text" id="name">
+        <input formControlName="name" (keyup)="applyFilter()" type="text" id="name">
     </div>
 
     <div>
         <label for="preice">Preço:</label>
-        <input formControlName="maxPrice" type="range" id="maxPrice" min="0" max="9999">
+        <input formControlName="maxPrice" (change)="applyFilter()" type="range" id="maxPrice" min="0" max="9999">
         <p>R${{maxPrice?.value?.toFixed(2)}}</p>
     </div>
 
-    <button type="submit">Filtrar</button>
     <button type="click" (click)="filterReset()">Resetar filtro</button>
 </form>
 
 <div class="categoryFilter">
     <p>Categorias</p>
-    <button (click)="applyFilter('Farol')">Farol</button>
-    <button (click)="applyFilter('Injeção')">Injeção</button>
-    <button (click)="applyFilter('Interior')">Interior</button>
-    <button (click)="applyFilter('Motor')">Motor</button>
-    <button (click)="applyFilter('Suspensão')">Suspensão</button>
+    <button>Farol</button>
+    <button>Injeção</button>
+    <button>Interior</button>
+    <button>Motor</button>
+    <button>Suspensão</button>
 </div>
 
 <section class="all-auto-parts-cards">
