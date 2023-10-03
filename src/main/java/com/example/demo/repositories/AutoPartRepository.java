@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface AutoPartRepository extends JpaRepository<AutoPartEntity, Integer> {
-    List<AutoPartEntity> findAutoPartEntityByPartNameContainsIgnoreCase(String name);
+    List<AutoPartEntity> findAutoPartEntityByCategoryIgnoreCase(String category);
 }

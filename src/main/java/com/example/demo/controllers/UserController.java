@@ -43,8 +43,8 @@ public class UserController {
         return "Usuário registrado com sucesso.";
     }
 
-    @GetMapping("/market")
-    public UserOrdersRequest getUserAfterLogin(@RequestParam("id") Integer id) {
+    @GetMapping("/user/profile")
+    public UserOrdersRequest getUserProfile(@RequestParam("id") Integer id) {
         return userService.getUser(id);
     }
 }
