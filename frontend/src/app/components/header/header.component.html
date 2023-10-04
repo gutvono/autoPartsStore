@@ -19,5 +19,6 @@
         <p *ngIf="user">
             Olá, {{user}}
         </p>
+        <button *ngIf="user" (click)="signOut()">x</button>
     </div>
 </header>

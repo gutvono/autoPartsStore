@@ -40,12 +40,11 @@ export class LoginComponent {
         this.loginService
             .loginPost(this.loginForm.value)
             .subscribe({
-                next: (data) => {
+                next: ({message, role, name}) => {
                     this.submitError = "";
-                    this.submitSuccess = data.message;
-                    console.log(data);
-                    
-                    this.router.navigate([`/${data.role}`]);
+                    this.submitSuccess = message;
+                    localStorage.setItem('user', JSON.stringify({name, role}));
+                    this.router.navigate([`/${role}`]);
                 },
                 error: (e) => {
                     this.submitSuccess = "";
