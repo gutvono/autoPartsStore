@@ -43,7 +43,9 @@ export class LoginComponent {
                 next: (data) => {
                     this.submitError = "";
                     this.submitSuccess = data.message;
-                    this.router.navigate(['/market']);
+                    console.log(data);
+                    
+                    this.router.navigate([`/${data.role}`]);
                 },
                 error: (e) => {
                     this.submitSuccess = "";
