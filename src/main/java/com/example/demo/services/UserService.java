@@ -28,6 +28,8 @@ public class UserService {
                 response.put("message", "Login realizado com sucesso.");
                 response.put("status", 200);
                 response.put("role", user.getRole());
+                response.put("name", user.getName());
+                response.put("id", user.getId());
             } else {
                 response.put("message", "Login ou senha incorretos.");
                 response.put("status", 401);
