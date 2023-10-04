@@ -1,13 +1,15 @@
 <app-header></app-header>
 
+<h1>Marketplace</h1>
+
 <form [formGroup]="filterForm">
     <div>
-        <label for="name">Nome da peça:</label>
+        <label>Nome da peça ou do carro:</label>
         <input formControlName="name" (keyup)="applyFilter()" type="text" id="name">
     </div>
 
     <div>
-        <label for="preice">Preço:</label>
+        <label>Preço:</label>
         <input formControlName="maxPrice" (change)="applyFilter()" type="range" id="maxPrice" min="0" max="9999">
         <p>R${{maxPrice?.value?.toFixed(2)}}</p>
     </div>
@@ -15,13 +17,15 @@
     <button type="click" (click)="filterReset()">Resetar filtro</button>
 </form>
 
-<div class="categoryFilter">
-    <p>Categorias</p>
-    <button (click)="applyCategoryFilter('Farol')">Farol</button>
-    <button (click)="applyCategoryFilter('Injeção')">Injeção</button>
-    <button (click)="applyCategoryFilter('Interior')">Interior</button>
-    <button (click)="applyCategoryFilter('Motor')">Motor</button>
-    <button (click)="applyCategoryFilter('Suspensão')">Suspensão</button>
+<div class="category-filter">
+    <h3>Categorias:</h3>
+    <div>
+        <button (click)="applyCategoryFilter('Farol')">Farol</button>
+        <button (click)="applyCategoryFilter('Injeção')">Injeção</button>
+        <button (click)="applyCategoryFilter('Interior')">Interior</button>
+        <button (click)="applyCategoryFilter('Motor')">Motor</button>
+        <button (click)="applyCategoryFilter('Suspensão')">Suspensão</button>
+    </div>
 </div>
 
 <section class="all-auto-parts-cards">
