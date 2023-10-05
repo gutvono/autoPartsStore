@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MarketService } from './market.service';
-import { AutoPart } from './IAutoPart';
+import { AutoPart } from '../../interfaces/IAutoPart';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-market',
@@ -20,7 +21,8 @@ export class MarketComponent {
     });
 
     constructor(
-        private marketService: MarketService
+        private marketService: MarketService,
+        private router: Router
     ) {}
 
     ngOnInit() {
@@ -75,4 +77,8 @@ export class MarketComponent {
         this.isCategoryApplied = false;
         this.filteredAutoParts = this.allAutoParts;
     };
+
+    buyProduct(id: number) {
+        this.router.navigate([`/buy-product/${id}`])
+    }
 }

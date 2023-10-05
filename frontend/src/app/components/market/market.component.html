@@ -40,7 +40,7 @@
 
         <div class="card-footer">
             <p class="price">R${{part.price.toFixed(2)}}</p>
-            <button>Comprar</button>
+            <button (click)="buyProduct(part.id)">Comprar</button>
         </div>
     </div>
 </section>
