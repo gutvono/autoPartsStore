@@ -10,7 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
-import { MarketComponent } from './components/market/market.component'
+import { MarketComponent } from './components/market/market.component';
+import { UserComponent } from './components/user/user.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MarketComponent } from './components/market/market.component'
     FooterComponent,
     HomeComponent,
     RegisterComponent,
-    MarketComponent
+    MarketComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
