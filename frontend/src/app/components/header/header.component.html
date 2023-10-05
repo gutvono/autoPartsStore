@@ -17,7 +17,7 @@
         </nav>
 
         <p *ngIf="user">
-            Olá, {{user}}
+            Olá, <a href="http://localhost:4200/profile">{{user}}</a> 
         </p>
         <button *ngIf="user" (click)="signOut()">x</button>
     </div>
