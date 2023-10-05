@@ -40,10 +40,10 @@ export class LoginComponent {
         this.loginService
             .loginPost(this.loginForm.value)
             .subscribe({
-                next: ({message, role, name}) => {
+                next: ({message, role, name, id}) => {
                     this.submitError = "";
                     this.submitSuccess = message;
-                    localStorage.setItem('user', JSON.stringify({name, role}));
+                    localStorage.setItem('user', JSON.stringify({name, role, id}));
                     this.router.navigate([`/${role}`]);
                 },
                 error: (e) => {
