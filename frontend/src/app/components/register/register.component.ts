@@ -69,16 +69,18 @@ export class RegisterComponent {
             return;
         }
 
-        console.log(this.registerForm.value);
-
         alert("Validando registro...");
+
         this.registerService
             .registerPost(this.registerForm.value)
             .subscribe({
                 next: (data) => {
                     this.submitError = "";
                     this.submitSuccess = data.message;
-                    this.router.navigate(['/market']);
+                    // localStorage.setItem('user', JSON.stringify({name, role, id}));
+                    console.log(data);
+                    
+                    this.router.navigate(['/customer']);
                 },
                 error: (e) => {
                     this.submitSuccess = "";
